@@ -14,14 +14,6 @@ from modules.load_pdf import load_pdf
 
 app = Flask(__name__)
 
-# Line Bot Configuration
-line_bot_api = MessagingApi()
-handler = WebhookHandler('YOUR_CHANNEL_SECRET')
-ngrok_tunnel = ngrok.connect(5000)
-
-# Set OpenAI API key
-os.environ["OPENAI_API_KEY"] = "YOUR_OPENAI_API_KEY"
-
 # Setup document search
 docsearch, qa_chain = setup_doc_search()
 
